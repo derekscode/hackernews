@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Story>
+
+@{
+    ViewData["Title"] = "Hacker News Best Stories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col">
+        <h2>Hacker News Best Stories</h2>
+        <h5>@ViewBag.Time</h5>
+        <br />
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col">
+        @foreach (var story in Model)
+        {
+            <h5>
+                <a href="@story.Url" target="_blank">
+                    @story.Title
+                </a>
+            </h5>
+            <p>by: @story.By</p>
+        }
+
+    </div>
+</div>
